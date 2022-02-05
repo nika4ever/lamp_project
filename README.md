@@ -28,3 +28,5 @@ Linux is the operating system for this stack, and the flavor we will be using is
 Installling an OS
 
  We will be utilising AWS service (Elastic Cloud Computing - EC2 instance) to create a server. To access this feature, you need to first create an account with AWS or sign in if you have an existing account
+
+/home/shanika/Documents/lamp_project/images/aws launch.png
