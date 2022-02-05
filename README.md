@@ -226,8 +226,83 @@ This will create a new blank file. Paste in the following bare-bones configurati
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>`
 
-![](awsimages/lamp.png)
+[](awsimages/lamp.png)!
 
+You can use the ***`ls`*** command to show the new file in the **sites-available** directory
 
+$ sudo ls /etc/apache2/sites-available
 
+You will see something like this
+000-default.conf  default-ssl.conf  projectlamp.conf`
+
+You can now use ***a2ensite*** command to enable the new virtual host:
+
+`$ sudo a2ensite projectlamp`
+
+You might want to disable the default website that comes installed with Apache. This is required if you’re not using a custom domain name, because in this case Apache’s default configuration would overwrite your virtual host. To disable Apache’s default website use ***a2dissite*** command , type:
+
+`$ sudo a2dissite 000-default`
+
+To make sure your configuration file doesn’t contain syntax errors, run:
+
+`$ sudo apache2ctl configtest`
+
+Finally, reload Apache so these changes take effect:
+
+`$ sudo systemctl reload apache2`
+
+Next:
+Your new website is now active, but the web root /var/www/projectlamp is still empty. Create an index.html file in that location so that we can test that the virtual host works as expected:
+
+On you command line type the below and replace `with public IP' with your EC2 instance public IP.
+
+`sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
+
+[](awsimages/curl.png)
+
+Now go to your browser and try to open your website URL using IP address:
+
+`http://<Public-IP-Address>:80`
+
+[](awsimages/phpbro.png)
+If you see the text from ‘echo’ command you wrote to index.html file, then it means your Apache virtual host is working as expected. In the output you will see your server’s public hostname (DNS name) and public IP address. 
+
+Step 5 — Enable PHP on the website
+
+the default **DirectoryIndex** settings on Apache, a file named `index.html` will always take precedence over an `index.php` file. This is useful for setting up maintenance pages in PHP applications, by creating a temporary `index.html` file containing an informative message to visitors. Because this page will take precedence over the `index.php` page, it will then become the landing page for the application. Once maintenance is over, the `index.html` is renamed or removed from the document root, bringing back the regular application page.
+
+In case you want to change this behavior, you’ll need to edit the **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the **index.php** file is listed within the **DirectoryIndex** directive:
+
+`sudo vim /etc/apache2/mods-enabled/dir.conf`
+[](awsimages/oldf.png)
+
+New input should look like:
+[](awsimages/newf.png)
+
+After saving and closing the file, you will need to reload Apache so the changes take effect:
+
+`$ sudo systemctl reload apache2`
+
+Create a new file named `index.php` inside your custom web root folder:
+
+`$ vim /var/www/projectlamp/index.php`
+
+This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+
+`<?php
+phpinfo();`
+
+[](awsimages/phpedit.png)
+
+When you are finished, save and close the file, refresh the page and you will see a page similar to this:
+
+[](awsimages/phpweb.png)
+
+Once you verify, remove the index.php file because it contains relevant information about your server.
+
+`$ sudo rm /var/www/projectlamp/index.php`
+
+[](awsimages/web.png)
+
+We have reached the end of the project. We have succesfully deployed a LAMP stack website in AWS.
 
