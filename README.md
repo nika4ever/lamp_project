@@ -226,7 +226,7 @@ This will create a new blank file. Paste in the following bare-bones configurati
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>`
 
-[](awsimages/lamp.png)!
+![](awsimages/lamp.png)!
 
 You can use the ***`ls`*** command to show the new file in the **sites-available** directory
 
@@ -258,13 +258,13 @@ On you command line type the below and replace `with public IP' with your EC2 in
 
 `sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
 
-[](awsimages/curl.png)
+![](awsimages/curl.png)
 
 Now go to your browser and try to open your website URL using IP address:
 
 `http://<Public-IP-Address>:80`
 
-[](awsimages/phpbro.png)
+![](awsimages/phpbro.png)
 If you see the text from ‘echo’ command you wrote to index.html file, then it means your Apache virtual host is working as expected. In the output you will see your server’s public hostname (DNS name) and public IP address. 
 
 Step 5 — Enable PHP on the website
@@ -274,10 +274,10 @@ the default **DirectoryIndex** settings on Apache, a file named `index.html`�
 In case you want to change this behavior, you’ll need to edit the **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the **index.php** file is listed within the **DirectoryIndex** directive:
 
 `sudo vim /etc/apache2/mods-enabled/dir.conf`
-[](awsimages/oldf.png)
+![](awsimages/oldf.png)
 
 New input should look like:
-[](awsimages/newf.png)
+![](awsimages/newf.png)
 
 After saving and closing the file, you will need to reload Apache so the changes take effect:
 
@@ -292,17 +292,17 @@ This will open a blank file. Add the following text, which is valid PHP code, in
 `<?php
 phpinfo();`
 
-[](awsimages/phpedit.png)
+![](awsimages/phpedit.png)
 
 When you are finished, save and close the file, refresh the page and you will see a page similar to this:
 
-[](awsimages/phpweb.png)
+![](awsimages/phpweb.png)
 
 Once you verify, remove the index.php file because it contains relevant information about your server.
 
 `$ sudo rm /var/www/projectlamp/index.php`
 
-[](awsimages/web.png)
+![](awsimages/phpweb.png)
 
 We have reached the end of the project. We have succesfully deployed a LAMP stack website in AWS.
 
