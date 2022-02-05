@@ -29,4 +29,14 @@ Installling an OS
 
  We will be utilising AWS service (Elastic Cloud Computing - EC2 instance) to create a server. To access this feature, you need to first create an account with AWS or sign in if you have an existing account
 
-/home/shanika/Documents/lamp_project/images/aws launch.png
+/home/shanika/Documents/lamp_project/aws images/aws launch.png
+
+Click "Launch a virtual machine"
+
+Type in the search bar Ubuntu Sever 20.01 LTS (HVM), SSD, click select.
+
+/home/shanika/Documents/lamp_project/aws images/search ubuntu.png
+
+Next, keep highlighted the selection in the image, and scroll down and click "Review and Launch"
+
+/home/shanika/Documents/lamp_project/aws images/step2.png
