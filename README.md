@@ -47,7 +47,7 @@ On the next page click "Launch"
 
 Create and save your key-pair pem file in a secure and accessible location. This will be needed to access your server from your local machine. Click "Download Key Pair" and then click "Launch Instances"
 
-/home/shanika/Documents/lamp_project/aws images/keypair.png
+![](awsimages/keypair.png)
 
 Click what's highlighted in red. Please note your number will be different.
 
