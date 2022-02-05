@@ -302,7 +302,7 @@ Once you verify, remove the index.php file because it contains relevant informat
 
 `$ sudo rm /var/www/projectlamp/index.php`
 
-![](awsimages/phpweb.png)
+![](awsimages/rmfile.png)
 
 We have reached the end of the project. We have succesfully deployed a LAMP stack website in AWS.
 
