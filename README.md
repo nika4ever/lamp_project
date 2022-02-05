@@ -29,7 +29,7 @@ Installling an OS
 
  We will be utilising AWS service (Elastic Cloud Computing - EC2 instance) to create a server. To access this feature, you need to first create an account with AWS or sign in if you have an existing account
 
-![](aws_images/awslaunch.png)
+![](awsimages/awslaunch.png)
 
 Click "Launch a virtual machine"
 
