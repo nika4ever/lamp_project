@@ -35,15 +35,15 @@ Click "Launch a virtual machine"
 
 Type in the search bar Ubuntu Sever 20.01 LTS (HVM), SSD, click select.
 
-/home/shanika/Documents/lamp_project/aws images/search ubuntu.png
+![](awsimages/searchubuntu.png)
 
 Next, keep highlighted the selection in the image, and scroll down and click "Review and Launch"
 
-/home/shanika/Documents/lamp_project/aws images/step2.png
+![](awsimages/step2.png)
 
 On the next page click "Launch"
 
-/home/shanika/Documents/lamp_project/aws images/step7_launch.png
+/![](awsimages/step7launch.png)
 
 Create and save your key-pair pem file in a secure and accessible location. This will be needed to access your server from your local machine. Click "Download Key Pair" and then click "Launch Instances"
 
@@ -51,7 +51,7 @@ Create and save your key-pair pem file in a secure and accessible location. This
 
 Click what's highlighted in red. Please note your number will be different.
 
-/home/shanika/Documents/lamp_project/aws images/launchinstance.png
-/home/shanika/Documents/lamp_project/aws images/ins.png
+![](awsimages/launchinstance.png)
+![](awsimages/ins.png)
 
 Connecting to your EC2 instance using PUTTY
